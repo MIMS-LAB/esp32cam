@@ -1,6 +1,6 @@
-#define CAMERA_MODEL_M5STACK_WIDE
+//#define CAMERA_MODEL_M5STACK_WIDE
 
-//#define CAMERA_MODEL_AI_THINKER
+#define CAMERA_MODEL_AI_THINKER
 
 #include "CameraWebServer_AP.h"
 #include "camera_pins.h"

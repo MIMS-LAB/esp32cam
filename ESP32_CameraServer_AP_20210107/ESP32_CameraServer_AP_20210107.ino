@@ -1,7 +1,7 @@
 #include "CameraWebServer_AP.h"
 #include <WiFi.h>
 #include "esp_camera.h"
-WiFiServer server(100);
+WiFiServer server(80);
 
 #define RXD2 33 
 #define TXD2 4
