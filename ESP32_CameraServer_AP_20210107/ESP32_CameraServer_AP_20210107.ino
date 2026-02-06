@@ -21,7 +21,7 @@ void setup()
   Serial.print("Initializing the MicroSD card module... ");
   initMicroSDCard();
   // Create a header row in the file if it's a new file
-  logFile = SD_MMC.open("/datalog.txt", FILE_APPEND);
+  logFile = SD_MMC.open("datalog.txt", FILE_APPEND);
   if (logFile) {
     if (logFile.size() == 0) { // Check if file is empty
       logFile.println("Timestamp (ms),Sensor Value");
@@ -35,16 +35,17 @@ void loop()
 
 String dataString = Serial.readStringUntil('\n');
  
- if (Serial.available() > 0)
- {
+if (Serial.available() > 0 )
+{
  // Open the log file in append mode
-  logFile = SD_MMC.open("/datalog.txt", FILE_APPEND);
+  logFile = SD_MMC.open("datalog.txt", FILE_APPEND);
   
-  if (logFile) {
+
     logFile.println(dataString); // Write data and a newline character
     logFile.close(); // Close the file immediately to ensure data is saved
-  } 
- } 
+  
+}
+Serial.flush(); 
 }
 
 // extra functions:
